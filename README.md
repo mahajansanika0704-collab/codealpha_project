@@ -37,17 +37,29 @@ A modern, responsive, and feature-packed web calculator built with Vanilla HTML,
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```
-calculator/
-├── index.html        # Core calculator layout and markup
-├── style.css         # Modern glassmorphism styling, themes & animations
-├── script.js         # Calculator engine, keyboard events, Web Audio & history
-└── README.md         # Documentation for Task 2
+├── index.html                  # Task 2: Core calculator layout and markup
+├── style.css                   # Task 2: Modern glassmorphism styling, themes & animations
+├── script.js                   # Task 2: Calculator engine, keyboard events, Web Audio & history
+├── README.md                   # Task 2 & Project documentation
+│
+└── MY_PERSONAL_PORTFOLIO/      # Task 1: Personal Portfolio Submission
+    ├── index.html              # Portfolio layout & structure
+    ├── css/style.css           # Styling & theme system
+    ├── js/script.js            # Typing effect, modal & interactivity
+    └── README.md               # Task 1 Documentation
 ```
 
 ---
 
-**Author:** Sanika Yogesh Mahajan  
-**Internship:** CodeAlpha Frontend Web Development
+## 👤 Author Information
+
+- **Name:** Sanika Yogesh Mahajan
+- **Email:** [mahajansanika0704@gmail.com](mailto:mahajansanika0704@gmail.com)
+- **Role:** Frontend Web Development Intern @ **CodeAlpha**
+
+---
+
+*Created with ❤️ for the CodeAlpha Internship Program.*
