@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="kitten">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern, aesthetic scientific-basic calculator featuring real-time evaluation, glassmorphism UI, keyboard support, audio feedback, history log, and multiple color themes.">
+  <title>Aesthetic Glassmorphism Calculator</title>
+  
+  <!-- Modern Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background lighting effects -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Cute Kitten Floating Paws Background (visible when kitten theme active) -->
+  <div class="kitten-floating-paws" aria-hidden="true">
+    <div class="floating-paw paw-1">🐾</div>
+    <div class="floating-paw paw-2">🐾</div>
+    <div class="floating-paw paw-3">🐱</div>
+    <div class="floating-paw paw-4">🐾</div>
+  </div>
+
+  <!-- Main Calculator Card -->
+  <main class="calculator-card" role="region" aria-label="Calculator">
+
+    <!-- Cute Kitten Ears Decoration -->
+    <div class="kitten-ears-wrapper" aria-hidden="true">
+      <div class="kitten-ear ear-left">
+        <div class="ear-outer"></div>
+        <div class="ear-inner"></div>
+      </div>
+      <div class="kitten-head-band">
+        <span class="kitten-bow">🎀</span>
+      </div>
+      <div class="kitten-ear ear-right">
+        <div class="ear-outer"></div>
+        <div class="ear-inner"></div>
+      </div>
+    </div>
+
+    <!-- Cute Kitten Whiskers Decoration -->
+    <div class="kitten-whiskers kitten-whiskers-left" aria-hidden="true">
+      <span class="whisker w-top"></span>
+      <span class="whisker w-mid"></span>
+      <span class="whisker w-bot"></span>
+    </div>
+    <div class="kitten-whiskers kitten-whiskers-right" aria-hidden="true">
+      <span class="whisker w-top"></span>
+      <span class="whisker w-mid"></span>
+      <span class="whisker w-bot"></span>
+    </div>
+    
+    <!-- Top Utility Bar -->
+    <header class="calc-header">
+      <div class="brand-title">
+        <span class="brand-dot"></span>
+        <span class="brand-name">CALC<span class="brand-accent">PRO</span></span>
+        <span class="kitten-mascot-badge" id="kittenMascot" title="Click me! Meow~" aria-label="Cute kitten mascot">🐱</span>
+      </div>
+
+      <div class="header-actions">
+        <!-- Audio Feedback Toggle -->
+        <button id="soundToggle" class="icon-btn" title="Toggle audio feedback" aria-label="Toggle sound">
+          <svg class="icon sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg class="icon sound-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <!-- History Drawer Toggle -->
+        <button id="historyToggle" class="icon-btn" title="Calculation history" aria-label="Toggle history panel">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </button>
+
+        <!-- Theme Picker Dropdown -->
+        <div class="theme-dropdown-wrapper">
+          <button id="themeDropdownBtn" class="icon-btn" title="Change Theme" aria-label="Select color theme">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+          </button>
+          <div id="themeMenu" class="theme-menu hidden" role="menu">
+            <button class="theme-option" data-theme="neon" role="menuitem">
+              <span class="color-swatch swatch-neon"></span> Cyber Neon
+            </button>
+            <button class="theme-option" data-theme="aurora" role="menuitem">
+              <span class="color-swatch swatch-aurora"></span> Frost Aurora
+            </button>
+            <button class="theme-option" data-theme="obsidian" role="menuitem">
+              <span class="color-swatch swatch-obsidian"></span> Royal Obsidian
+            </button>
+            <button class="theme-option" data-theme="nordic" role="menuitem">
+              <span class="color-swatch swatch-nordic"></span> Nordic Light
+            </button>
+            <button class="theme-option active" data-theme="kitten" role="menuitem">
+              <span class="color-swatch swatch-kitten"></span> Cute Kitten 🐾
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Multi-tier Interactive Display Screen -->
+    <section class="display-section" aria-live="polite">
+      <!-- Kitten Watermark Paw in Display -->
+      <span class="kitten-display-paw" aria-hidden="true">🐾</span>
+
+      <!-- Top Line: Full Expression / Calculation path -->
+      <div class="expression-wrapper">
+        <div id="expressionDisplay" class="expression-display" title="Expression History"></div>
+      </div>
+
+      <!-- Live Real-Time Evaluation Preview -->
+      <div class="live-preview-wrapper">
+        <span class="preview-equals" id="previewEquals">=</span>
+        <span id="previewDisplay" class="preview-display">0</span>
+      </div>
+
+      <!-- Bottom Line: Primary Input / Result Display -->
+      <div class="main-display-wrapper">
+        <input 
+          type="text" 
+          id="mainDisplay" 
+          class="main-display" 
+          value="0" 
+          readonly 
+          aria-label="Current input or result"
+        >
+        <!-- Quick copy button inside display -->
+        <button id="copyBtn" class="copy-display-btn" title="Copy result to clipboard" aria-label="Copy to clipboard">
+          <svg class="icon copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Keypad Button Matrix -->
+    <div class="keypad-grid" role="group" aria-label="Calculator keypad">
+      
+      <!-- Row 1: Clear, Backspace, Divide -->
+      <button class="calc-btn btn-fn btn-wide" data-action="all-clear" data-key="Escape" id="btn-ac" aria-label="All Clear">
+        <span class="main-symbol">AC</span>
+      </button>
+      <button class="calc-btn btn-fn" data-action="delete" data-key="Backspace" id="btn-backspace" aria-label="Backspace">
+        <span class="main-symbol">⌫</span>
+      </button>
+      <button class="calc-btn btn-operator" data-action="operator" data-val="/" data-key="/" id="btn-divide" aria-label="Divide">
+        <span class="main-symbol">÷</span>
+      </button>
+
+      <!-- Row 2: 7, 8, 9, Multiply -->
+      <button class="calc-btn btn-num" data-action="number" data-val="7" data-key="7" id="btn-7">
+        <span class="main-symbol">7</span>
+      </button>
+      <button class="calc-btn btn-num" data-action="number" data-val="8" data-key="8" id="btn-8">
+        <span class="main-symbol">8</span>
+      </button>
+      <button class="calc-btn btn-num" data-action="number" data-val="9" data-key="9" id="btn-9">
+        <span class="main-symbol">9</span>
+      </button>
+      <button class="calc-btn btn-operator" data-action="operator" data-val="*" data-key="*" id="btn-multiply" aria-label="Multiply">
+        <span class="main-symbol">×</span>
+      </button>
+
+      <!-- Row 3: 4, 5, 6, Subtract -->
+      <button class="calc-btn btn-num" data-action="number" data-val="4" data-key="4" id="btn-4">
+        <span class="main-symbol">4</span>
+      </button>
+      <button class="calc-btn btn-num" data-action="number" data-val="5" data-key="5" id="btn-5">
+        <span class="main-symbol">5</span>
+      </button>
+      <button class="calc-btn btn-num" data-action="number" data-val="6" data-key="6" id="btn-6">
+        <span class="main-symbol">6</span>
+      </button>
+      <button class="calc-btn btn-operator" data-action="operator" data-val="-" data-key="-" id="btn-subtract" aria-label="Subtract">
+        <span class="main-symbol">−</span>
+      </button>
+
+      <!-- Row 4: 1, 2, 3, Add -->
+      <button class="calc-btn btn-num" data-action="number" data-val="1" data-key="1" id="btn-1">
+        <span class="main-symbol">1</span>
+      </button>
+      <button class="calc-btn btn-num" data-action="number" data-val="2" data-key="2" id="btn-2">
+        <span class="main-symbol">2</span>
+      </button>
+      <button class="calc-btn btn-num" data-action="number" data-val="3" data-key="3" id="btn-3">
+        <span class="main-symbol">3</span>
+      </button>
+      <button class="calc-btn btn-operator" data-action="operator" data-val="+" data-key="+" id="btn-add" aria-label="Add">
+        <span class="main-symbol">+</span>
+      </button>
+
+      <!-- Row 5: 0, Decimal, Equals -->
+      <button class="calc-btn btn-num btn-wide" data-action="number" data-val="0" data-key="0" id="btn-0" aria-label="0">
+        <span class="main-symbol">0</span>
+      </button>
+      <button class="calc-btn btn-num" data-action="decimal" data-val="." data-key="." id="btn-decimal" aria-label="Decimal point">
+        <span class="main-symbol">.</span>
+      </button>
+      <button class="calc-btn btn-equals" data-action="calculate" data-key="Enter" id="btn-equals" aria-label="Calculate result">
+        <span class="main-symbol">=</span>
+      </button>
+    </div>
+
+    <!-- Keyboard Shortcut Hint -->
+    <footer class="calc-footer">
+      <span class="keyboard-hint">
+        Keyboard: <kbd>0-9</kbd> &bull; <kbd>+</kbd> <kbd>−</kbd> <kbd>×</kbd> <kbd>÷</kbd> &bull; <kbd>Enter</kbd>
+      </span>
+    </footer>
+
+    <!-- History Sliding Drawer Panel -->
+    <aside id="historyPanel" class="history-panel hidden" aria-label="Calculation history list">
+      <div class="history-header">
+        <h3>History</h3>
+        <div class="history-header-actions">
+          <button id="clearHistoryBtn" class="text-btn danger" title="Clear all history">Clear</button>
+          <button id="closeHistoryBtn" class="icon-btn-sm" aria-label="Close history">&times;</button>
+        </div>
+      </div>
+      <div id="historyList" class="history-list">
+        <div class="empty-history">No calculations yet</div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
