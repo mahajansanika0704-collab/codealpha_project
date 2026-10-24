@@ -1,55 +1,85 @@
-# Aesthetic Glassmorphism Calculator 🐱✨
+# CodeAlpha Frontend Web Development Internship 🚀
 
-> **Task 2 Submission** for the **CodeAlpha Frontend Web Development Internship**.
-
-A modern, responsive, and feature-packed web calculator built with Vanilla HTML, CSS, and JavaScript. Featuring real-time expression evaluation, interactive glassmorphic UI, cute kitten theme with animations, sound feedback, calculation history, and multiple theme palettes.
+> Repository containing tasks and projects completed by **Sanika Yogesh Mahajan** during the **CodeAlpha Frontend Web Development Internship**.
 
 ---
 
-## ✨ Features
+## 📂 Repository Projects Overview
 
-- 🎨 **Glassmorphism UI**: Backdrop blur, soft ambient glows, and clean modern aesthetics.
-- 🐱 **Cute Kitten Theme**: Floating paws animation, decorative ears, bow, and whisker details.
-- 🎨 **Multiple Color Themes**: Instant toggle between Kitten (Cute Pink), Dark Nebula, Light Minimal, and Cyberpunk Emerald.
-- 🔊 **Sound Feedback**: Web Audio API generated soft clicks and audio tones (toggleable on/off).
-- 📜 **Calculation History**: View past operations, recall previous results with one click, and clear history.
-- ⚡ **Real-Time Result Preview**: Live calculation preview while typing expressions.
-- ⌨️ **Full Keyboard Support**: Type numbers, operators, `Enter` for equals, `Backspace` for delete, and `Escape` for clear.
-- 📱 **Fully Responsive**: Optimized layout for smartphones, tablets, and desktop displays.
+| Task | Project Name | Directory | Quick Link |
+| :--- | :--- | :--- | :--- |
+| **Task 1** | **Personal Portfolio Website** | [`MY_PERSONAL_PORTFOLIO/`](./MY_PERSONAL_PORTFOLIO/) | [Open Portfolio](./MY_PERSONAL_PORTFOLIO/index.html) |
+| **Task 2** | **Aesthetic Glassmorphism Calculator** | [`CALCULATOR/`](./CALCULATOR/) | [Open Calculator](./CALCULATOR/index.html) |
 
 ---
 
-## 🛠️ Tech Stack
+## 🌟 Task 1: Personal Developer Portfolio
 
-- **HTML5**: Semantic tags, accessible ARIA attributes.
-- **CSS3**: Glassmorphism, CSS Custom Properties (Theme variables), CSS Grid, Flexbox, Keyframe Animations.
-- **JavaScript (ES6+)**: Clean modular logic, Web Audio API, keyboard listener, localStorage for theme persistence.
+- **Directory:** [`MY_PERSONAL_PORTFOLIO/`](./MY_PERSONAL_PORTFOLIO/)
+- **Tech Stack:** HTML5, CSS3, JavaScript (ES6+), Font Awesome 6, Google Fonts
+- **Features:**
+  - Modern Light/Dark theme toggle with `localStorage`
+  - Dynamic typing animation for roles
+  - Filterable project case studies
+  - Live resume preview & print/PDF modal
+  - Interactive contact form with real-time feedback
+
+👉 Read full documentation in [`MY_PERSONAL_PORTFOLIO/README.md`](./MY_PERSONAL_PORTFOLIO/README.md).
 
 ---
 
-## 🚀 How to Run
+## 🐱 Task 2: Aesthetic Glassmorphism Calculator
 
-1. Open `index.html` directly in any modern web browser.
-2. Alternatively, run using VS Code Live Server or a local HTTP server:
-   ```bash
-   npx serve .
-   ```
+- **Directory:** [`CALCULATOR/`](./CALCULATOR/)
+- **Tech Stack:** HTML5, CSS3 (Glassmorphism & CSS Grid), JavaScript (ES6+), Web Audio API
+- **Features:**
+  - Glassmorphic UI with dynamic ambient glows
+  - Cute kitten theme with floating paw animations
+  - Multiple theme palettes (Kitten Pink, Dark Nebula, Light Minimal, Cyberpunk Emerald)
+  - Toggleable sound feedback with Web Audio API
+  - Live expression preview, calculation history log, and full keyboard navigation
+
+👉 Read full documentation in [`CALCULATOR/README.md`](./CALCULATOR/README.md).
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-├── index.html                  # Task 2: Core calculator layout and markup
-├── style.css                   # Task 2: Modern glassmorphism styling, themes & animations
-├── script.js                   # Task 2: Calculator engine, keyboard events, Web Audio & history
-├── README.md                   # Task 2 & Project documentation
+codealpha_project/
+├── index.html                  # Main project portal / showcase hub (GitHub Pages)
+├── README.md                   # Main internship documentation
+├── .github/workflows/          # GitHub Pages static deployment workflow
 │
-└── MY_PERSONAL_PORTFOLIO/      # Task 1: Personal Portfolio Submission
-    ├── index.html              # Portfolio layout & structure
-    ├── css/style.css           # Styling & theme system
-    ├── js/script.js            # Typing effect, modal & interactivity
-    └── README.md               # Task 1 Documentation
+├── MY_PERSONAL_PORTFOLIO/      # 📌 Task 1: Personal Portfolio
+│   ├── index.html              # Portfolio entry point
+│   ├── css/style.css           # Portfolio styling & responsive layout
+│   ├── js/script.js            # Typing effect, modal & interactivity
+│   ├── assets/images/          # Avatar & project screenshots
+│   └── README.md               # Task 1 Documentation
+│
+└── CALCULATOR/                 # 📌 Task 2: Aesthetic Glassmorphic Calculator
+    ├── index.html              # Calculator UI & structure
+    ├── style.css               # Glassmorphism, animations & color themes
+    ├── script.js               # Calculator engine, keyboard events & audio
+    └── README.md               # Task 2 Documentation
+```
+
+---
+
+## 🚀 How to Run Locally
+
+You can launch either project directly in any browser:
+
+1. **Portfolio:** Open `MY_PERSONAL_PORTFOLIO/index.html` in your browser.
+2. **Calculator:** Open `CALCULATOR/index.html` in your browser.
+3. **Projects Hub:** Open root `index.html` to browse both tasks from a single dashboard.
+
+Or run a local server:
+```bash
+npx serve .
+# or
+python -m http.server 3000
 ```
 
 ---
@@ -59,6 +89,7 @@ A modern, responsive, and feature-packed web calculator built with Vanilla HTML,
 - **Name:** Sanika Yogesh Mahajan
 - **Email:** [mahajansanika0704@gmail.com](mailto:mahajansanika0704@gmail.com)
 - **Role:** Frontend Web Development Intern @ **CodeAlpha**
+- **GitHub:** [mahajansanika0704-collab](https://github.com/mahajansanika0704-collab)
 
 ---
 
